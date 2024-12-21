@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sl</title>
+</head>
+
+<style>
+
+    body, h1, h2, p, ul, li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    body{
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    header{
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li{
+        margin: 0 15px;
+    }
+
+    nav ul li a{
+        display: flex;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover{
+        color: #ffa500;
+        text-decoration: underline;
+    }
+
+    #hero{
+        background: url(images) no-repeat center center/cover;
+        color: #fff;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    #hero h1{
+        font-size: 2.5rem;
+    }
+
+    #hero p{
+        font-size: 1.2rem;
+        margin: 20px 0;
+    }
+
+    #hero button{
+        background-color: #555;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    /* CONTACT SECTION */
+
+    .contact form{
+        max-width: 600;
+        margin: 0 auto;
+    }
+
+    .contact label{
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .contact input, .contact textarea{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #dfdfdf;
+        border-radius: 5px;
+    }
+
+    .contact textarea{
+        height: 150px;
+        resize: vertical;
+    }
+
+    main{
+        padding: 20px;
+        text-align: center;
+    }
+
+    main h2{
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    main p{
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    /*Responsive Design for tablets and phones*/
+
+    @media(max-width:768px){
+        nav ul{
+            flex-direction: column;
+        }
+
+        nav ul li{
+            margin: 10px 0;
+        }
+
+        #hero{
+            padding: 50px 20px;
+        }
+
+        #hero h1{
+            font-size: 2rem;
+        }
+
+        #hero p{
+            font-size: 1rem;
+        }
+        
+        main{
+            padding: 10px;
+        }
+
+        footer{
+            padding: 10px 0;
+        }
+    }
+
+    @media(max-width:480px){
+        nav ul{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul li{
+            margin: 5px 0;
+        }
+
+        #hero{
+            padding: 30px 10px;
+        }
+
+        #hero h1{
+            font-size: 1.5rem;
+        }
+
+        #hero p{
+            font-size: 0.9rem;
+        }
+
+        #hero button{
+            font-size: 0.9rem;
+            padding: 8px 15px;
+        }
+
+        main h2{
+            font-size: 1.5rem;
+        }
+
+        main p{
+            font-size: 0.9rem;
+        }
+    }
+
+
+    /* FOOTER*/
+
+    footer{
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    @media(max-width:768px){
+        footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        main{
+            padding-bottom: 60px;
+        }
+    }
+
+    @media(max-width:480px){
+
+    }
+
+      /* Contact Page Styles */
+      .contact-header {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .contact-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h3 {
+      margin-bottom: 1.5rem;
+      color: #004aad;
+      font-size: 1.8rem;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #003580;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 1rem;
+      color: #004aad;
+    }
+
+    .contact-info p {
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    
+
+</style>
+
+<body>
+    <header>
+       <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACTS</a></li>
+        </ul>
+       </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Reach out to us with any question, comment or request.</p>
+
+            <h2>CONTACT INFORMATION</h2>
+            <P><strong>Email:</strong>tqeryqterqty</P>
+            <P><strong>Phone:</strong>5875e8758752e875</P>
+            <P><strong>Address:</strong>tghsdh heqfdvjhv hwdgf</P>
+
+            <h2>We are here to help. SEND US A MESSAGE ANYTIME</h2>
+           <!-- <form action="#" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">message:</label><br>
+                <textarea name="message" id="message" rows="5" required></textarea><br><br>
+
+                <input type="submit" value="SEND">
+
+            </form>-->
+
+        </section>
+    </main>
+
+    <section class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="#">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+          
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+
+<script>
+     document.querySelector('#hero button').addEventListener('clic)',function(){
+        alert('welcome');
+    });
+</script>
+
+<!--FOOTER SECTION-->
+    <footer>
+        <p>&copy; 2024 superlink fibers. All rights reserved.</p>
+    </footer>
+</body>
+</html>
