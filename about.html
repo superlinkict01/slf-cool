@@ -1,239 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sl</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | SUPERLINK FIBER</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header and Navbar */
+    .header {
+      background-color: #004aad;
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #ffcc00;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: white;
+    }
+
+    .nav-links.active {
+      display: block;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #004aad;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .nav-links li {
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    /* About Section */
+    .about {
+      padding: 4rem 0;
+      background: url('about-bg.jpg') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .about h1 {
+      font-size: 2.5rem;
+      color: #004aad;
+      margin-bottom: 1.5rem;
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: #555;
+      text-align: center;
+    }
+
+    .about-image {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .about-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .about-card h3 {
+      color: #004aad;
+      margin-bottom: 1rem;
+    }
+
+    .about-card p {
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+  </style>
 </head>
-
-<style>
-
-    body, h1, h2, p, ul, li{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    body{
-        background-color: #f4f4f4;
-        color: #333;
-        line-height: 1.5;
-    }
-
-    header{
-        background-color: #333;
-        color: #fff;
-        padding: 10px 0;
-    }
-
-    nav ul{
-        display: flex;
-        justify-content: center;
-    }
-
-    nav ul li{
-        margin: 0 15px;
-    }
-
-    nav ul li a{
-        display: flex;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    nav ul li a:hover{
-        color: #ffa500;
-        text-decoration: underline;
-    }
-
-    #hero{
-        background: url(images) no-repeat center center/cover;
-        color: #fff;
-        text-align: center;
-        padding: 100px 20px;
-    }
-
-    #hero h1{
-        font-size: 2.5rem;
-    }
-
-    #hero p{
-        font-size: 1.2rem;
-        margin: 20px 0;
-    }
-
-    #hero button{
-        background-color: #555;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-
-    main{
-        padding: 20px;
-        text-align: center;
-    }
-
-    main h2{
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    main p{
-        margin-bottom: 20px;
-        color: #555;
-    }
-
-    /* About us*/
-    #about{
-        padding: 40px 20px;
-        text-align: left;
-        background-color: #fff;
-        color: #333;
-    }
-
-    #about h1, #about h2{
-        color: #333;
-        margin-bottom: 20px;
-    }
-
-    #about p{
-        margin-bottom: 20px;
-        line-height: 1.6;
-    }
-
-    /*Responsive Design for tablets and phones*/
-
-    @media(max-width:768px){
-        nav ul{
-            flex-direction: column;
-        }
-
-        nav ul li{
-            margin: 10px 0;
-        }
-
-        #hero{
-            padding: 50px 20px;
-        }
-
-        #hero h1{
-            font-size: 2rem;
-        }
-
-        #hero p{
-            font-size: 1rem;
-        }
-        
-        main{
-            padding: 10px;
-        }
-
-        footer{
-            padding: 10px 0;
-        }
-    }
-
-    @media(max-width:480px){
-        nav ul{
-            flex-direction: column;
-            align-items: center;
-        }
-
-        nav ul li{
-            margin: 5px 0;
-        }
-
-        #hero{
-            padding: 30px 10px;
-        }
-
-        #hero h1{
-            font-size: 1.5rem;
-        }
-
-        #hero p{
-            font-size: 0.9rem;
-        }
-
-        #hero button{
-            font-size: 0.9rem;
-            padding: 8px 15px;
-        }
-
-        main h2{
-            font-size: 1.5rem;
-        }
-
-        main p{
-            font-size: 0.9rem;
-        }
-    }
-
-
-    /* FOOTER*/
-
-    footer{
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 15px 0;
-    }
-
-    @media(max-width:768px){
-        footer{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        main{
-            padding-bottom: 60px;
-        }
-    }
-
-    @media(max-width:480px){
-
-    }
-    
-
-</style>
-
 <body>
-    <header>
-       <nav>
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html" class="active">ABOUT</a></li>
-            <li><a href="services.html">SERVICES</a></li>
-            <li><a href="contact.html">CONTACTS</a></li>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">SL FIBER</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <!--<li><a href="login.html" class="btn-login">Login</a></li>-->
         </ul>
-       </nav>
-    </header>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section id="about">
-            <h1>About slf</h1>
-            <p>lllllllll</p>
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>At Superlink Fiber, we are committed to providing innovative fiber-optic internet solutions that connect you to the world with speed and reliability. Our goal is to empower individuals and businesses with seamless connectivity for a brighter future.</p>
+      <div class="about-image">
+        <img src="about-image.jpg" alt="About Us Image">
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Our Vision</h3>
+          <p>To be the leading provider of innovative telecom solutions, shaping the future of communication.</p>
+        </div>
+        <div class="about-card">
+          <h3>Our Mission</h3>
+          <p>Empowering connections through cutting-edge technology and customer-centric services.</p>
+        </div>
+        <div class="about-card">
+          <h3>Our Values</h3>
+          <p>Integrity, Innovation, and Excellence in everything we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        </section>
-    </main>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 SUPERLINK FIBERS. All rights reserved.</p>
+    </div>
+  </footer>
 
-
-<script>
-     document.querySelector('#hero button').addEventListener('clic)',function(){
-        alert('welcome');
-    });
-</script>
-
-<!--FOOTER SECTION-->
-    <footer>
-        <p>&copy; 2024 superlink fibers. All rights reserved.</p>
-    </footer>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
