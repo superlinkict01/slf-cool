@@ -1,213 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sl</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | SUPERLINK FIBER</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header and Navbar */
+    .header {
+      background-color: #004aad;
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Responsive Navbar */
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: white;
+    }
+
+    .nav-links.active {
+      display: block;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #004aad;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .nav-links li {
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('hero-image.jpg') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      background-color: #ffcc00;
+      color: #004aad;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #ffd633;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    /* Services Page Styles */
+    .services-header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    .services-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .services-header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      color: #004aad;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .service-card .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #004aad;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .services-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
-<style>
-
-    body, h1, h2, p, ul, li{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    body{
-        background-color: #f4f4f4;
-        color: #333;
-        line-height: 1.5;
-    }
-
-    header{
-        background-color: #333;
-        color: #fff;
-        padding: 10px 0;
-    }
-
-    nav ul{
-        display: flex;
-        justify-content: center;
-    }
-
-    nav ul li{
-        margin: 0 15px;
-    }
-
-    nav ul li a{
-        display: flex;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    nav ul li a:hover{
-        color: #ffa500;
-        text-decoration: underline;
-    }
-
-    #hero{
-        background: url(images) no-repeat center center/cover;
-        color: #fff;
-        text-align: center;
-        padding: 100px 20px;
-    }
-
-    #hero h1{
-        font-size: 2.5rem;
-    }
-
-    #hero p{
-        font-size: 1.2rem;
-        margin: 20px 0;
-    }
-
-    #hero button{
-        background-color: #555;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-
-    main{
-        padding: 20px;
-        text-align: center;
-    }
-
-    main h2{
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    main p{
-        margin-bottom: 20px;
-        color: #555;
-    }
-
-    /*Responsive Design for tablets and phones*/
-
-    @media(max-width:768px){
-        nav ul{
-            flex-direction: column;
-        }
-
-        nav ul li{
-            margin: 10px 0;
-        }
-
-        #hero{
-            padding: 50px 20px;
-        }
-
-        #hero h1{
-            font-size: 2rem;
-        }
-
-        #hero p{
-            font-size: 1rem;
-        }
-        
-        main{
-            padding: 10px;
-        }
-
-        footer{
-            padding: 10px 0;
-        }
-    }
-
-    @media(max-width:480px){
-        nav ul{
-            flex-direction: column;
-            align-items: center;
-        }
-
-        nav ul li{
-            margin: 5px 0;
-        }
-
-        #hero{
-            padding: 30px 10px;
-        }
-
-        #hero h1{
-            font-size: 1.5rem;
-        }
-
-        #hero p{
-            font-size: 0.9rem;
-        }
-
-        #hero button{
-            font-size: 0.9rem;
-            padding: 8px 15px;
-        }
-
-        main h2{
-            font-size: 1.5rem;
-        }
-
-        main p{
-            font-size: 0.9rem;
-        }
-    }
-
-
-    /* FOOTER*/
-
-    footer{
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 15px 0;
-    }
-
-    @media(max-width:768px){
-        footer{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        main{
-            padding-bottom: 60px;
-        }
-    }
-
-    @media(max-width:480px){
-
-    }
-    
-
-</style>
-
 <body>
-    <header>
-       <nav>
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="services.html">SERVICES</a></li>
-            <li><a href="contact.html">CONTACTS</a></li>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">SL FIBER</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-       </nav>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-   
-<script>
-     document.querySelector('#hero button').addEventListener('clic)',function(){
-        alert('welcome');
-    });
-</script>
+  <section class="services-header">
+    <h1>Our Services</h1>
+    <p>Explore the best solutions for your connectivity needs</p>
+  </section>
 
-<!--FOOTER SECTION-->
-    <footer>
-        <p>&copy; 2024 superlink fibers. All rights reserved.</p>
-    </footer>
+  <section class="services-container">
+    <!-- Service Card 1 -->
+    <div class="service-card">
+      <img src="internet-service.jpg" alt="High-Speed Internet">
+      <h3>High-Speed Internet</h3>
+      <p>Enjoy seamless browsing and ultra-fast internet for your home and business. Reliable and uninterrupted.</p>
+      <div class="price">Ksh 3,500/month</div>
+    </div>
+
+    <!-- Service Card 2 -->
+    <div class="service-card">
+      <img src="voip-service.jpg" alt="VoIP Services">
+      <h3>VoIP Services</h3>
+      <p>Switch to internet-based phone services with cost-effective and clear communication.</p>
+      <div class="price">Ksh 2,000/month</div>
+    </div>
+
+    <!-- Service Card 3 -->
+    <div class="service-card">
+      <img src="vpn-service.jpg" alt="VPN Services">
+      <h3>VPN Services</h3>
+      <p>Enhance your online security and privacy with our secure and reliable VPN service.</p>
+      <div class="price">Ksh 1,500/month</div>
+    </div>
+
+    <!-- Service Card 4 -->
+    <div class="service-card">
+      <img src="broadband-packages.jpg" alt="Broadband Packages">
+      <h3>Broadband Packages</h3>
+      <p>Flexible broadband packages designed for high-speed, high-availability internet.</p>
+      <div class="price">Ksh 4,000/month</div>
+    </div>
+
+    <!-- Service Card 5 -->
+    <div class="service-card">
+      <img src="router-service.jpg" alt="Router and Modem">
+      <h3>Router & Modem</h3>
+      <p>We offer high-quality routers and modems that ensure stable and fast internet access.</p>
+      <div class="price">Ksh 6,000</div>
+    </div>
+
+    <!-- Service Card 6 -->
+    <div class="service-card">
+      <img src="customer-support.jpg" alt="24/7 Customer Support">
+      <h3>24/7 Customer Support</h3>
+      <p>Our team is available round the clock to assist you with any service-related issues.</p>
+      <div class="price">Included with every service</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 SLF Telecom. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
