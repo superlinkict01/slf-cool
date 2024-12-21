@@ -42,14 +42,17 @@
 
     .navbar {
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* Centers the navbar items */
       align-items: center;
+      width: 100%;
     }
 
     .logo {
       font-size: 1.8rem;
       font-weight: bold;
       color: white;
+      margin-right: auto; /* Pushes the logo to the left */
+      padding-left: 20px; /* Optional: Adds some space on the left */
     }
 
     .nav-links {
@@ -66,47 +69,6 @@
 
     .nav-links li a:hover {
       color: #ffcc00;
-    }
-
-    /* Responsive Navbar */
-    .hamburger {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px auto;
-      background-color: white;
-    }
-
-    .nav-links.active {
-      display: block;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #004aad;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    .nav-links li {
-      margin: 1rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-      }
-
-      .hamburger {
-        display: block;
-      }
     }
 
     /* Hero Section */
@@ -267,7 +229,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
-         <!-- <li><a href="login.html" class="btn-login">Login</a></li>-->
+          <!-- <li><a href="login.html" class="btn-login">Login</a></li> -->
         </ul>
       </nav>
     </div>
