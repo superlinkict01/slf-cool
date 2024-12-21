@@ -1,239 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sl</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | SUPERLINK FIBER</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #272323;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header and Navbar */
+    .header {
+      background-color: #004aad;
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    .btn-login {
+      background-color: #ffcc00;
+      color: #004aad;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-login:hover {
+      background-color: #ffd633;
+      transform: scale(1.05);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('hero-image.jpg') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      z-index: 10;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+
+    .btn-primary {
+      background-color: #ffcc00;
+      color: #004aad;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #ffd633;
+      transform: scale(1.1);
+    }
+
+    /* About Us Section */
+    .about-us {
+      background-color: #ffffff;
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: -5rem;
+      z-index: 20;
+      position: relative;
+    }
+
+    .about-us h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: #004aad;
+    }
+
+    .about-us p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-weight: 400;
+    }
+
+    .about-us .highlight {
+      font-weight: 600;
+      color: #004aad;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    footer p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-
-<style>
-
-    body, h1, h2, p, ul, li{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    body{
-        background-color: #f4f4f4;
-        color: #333;
-        line-height: 1.5;
-    }
-
-    header{
-        background-color: #333;
-        color: #fff;
-        padding: 10px 0;
-    }
-
-    nav ul{
-        display: flex;
-        justify-content: center;
-    }
-
-    nav ul li{
-        margin: 0 15px;
-    }
-
-    nav ul li a{
-        display: flex;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    nav ul li a:hover{
-        color: #ffa500;
-        text-decoration: underline;
-    }
-
-    #hero{
-        background: url(images) no-repeat center center/cover;
-        color: #fff;
-        text-align: center;
-        padding: 100px 20px;
-    }
-
-    #hero h1{
-        font-size: 2.5rem;
-    }
-
-    #hero p{
-        font-size: 1.2rem;
-        margin: 20px 0;
-    }
-
-    #hero button{
-        background-color: #555;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-
-    main{
-        padding: 20px;
-        text-align: center;
-    }
-
-    main h2{
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    main p{
-        margin-bottom: 20px;
-        color: #555;
-    }
-
-    /*Responsive Design for tablets and phones*/
-
-    @media(max-width:768px){
-        nav ul{
-            flex-direction: column;
-        }
-
-        nav ul li{
-            margin: 10px 0;
-        }
-
-        #hero{
-            padding: 50px 20px;
-        }
-
-        #hero h1{
-            font-size: 2rem;
-        }
-
-        #hero p{
-            font-size: 1rem;
-        }
-        
-        main{
-            padding: 10px;
-        }
-
-        footer{
-            padding: 10px 0;
-        }
-    }
-
-    @media(max-width:480px){
-        nav ul{
-            flex-direction: column;
-            align-items: center;
-        }
-
-        nav ul li{
-            margin: 5px 0;
-        }
-
-        #hero{
-            padding: 30px 10px;
-        }
-
-        #hero h1{
-            font-size: 1.5rem;
-        }
-
-        #hero p{
-            font-size: 0.9rem;
-        }
-
-        #hero button{
-            font-size: 0.9rem;
-            padding: 8px 15px;
-        }
-
-        main h2{
-            font-size: 1.5rem;
-        }
-
-        main p{
-            font-size: 0.9rem;
-        }
-    }
-
-
-    /* FOOTER*/
-
-    footer{
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 15px 0;
-    }
-
-    @media(max-width:768px){
-        footer{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        main{
-            padding-bottom: 60px;
-        }
-    }
-
-    @media(max-width:480px){
-
-    }
-    
-
-</style>
-
 <body>
-    <header>
-        <nav>
-         <ul>
-             <li><a href="index.html">HOME</a></li>
-             <li><a href="about.html">ABOUT</a></li>
-             <li><a href="services.html">SERVICES</a></li>
-             <li><a href="contact.html">CONTACTS</a></li>
-         </ul>
-        </nav>
-     </header>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">SL FIBER</a>
+        <ul class="nav-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!--HERO SECTION-->
-    <section id="hero">
-        <h1>welcome to...</h1>
-        <p>join our ...</p>
-        <button>learn more</button>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to SL Fiber</h1>
+      <p>Providing fast, reliable fiber internet services for homes and businesses.</p>
+      <a href="services.html" class="btn-primary">Our Services</a>
+    </div>
+  </section>
 
-    </section>
+  <!-- About Us Section -->
+  <section class="about-us">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At <span class="highlight">SL Fiber</span>, we are dedicated to providing high-speed fiber internet to individuals and businesses within Nairobi. With cutting-edge technology, we offer seamless connectivity that powers your daily activities with unmatched reliability and speed.</p>
+      <p>Our mission is to bring fiber-optic broadband to more homes and businesses, ensuring that our customers experience the best service available. We pride ourselves on our customer support and strive to meet your needs with flexibility and efficiency.</p>
+      <p>Whether you're working from home, streaming videos, or running a business, SL Fiber ensures you get the connection you need, at the speed you deserve.</p>
+    </div>
+  </section>
 
-    <!--MAIN CONTENT-->
-<main>
-    <section id="hero">
-        <h1>welcome to...</h1>
-        <p>join our ...</p>
-        <button>learn more</button>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 SL Fiber. All rights reserved.</p>
+    </div>
+  </footer>
 
-    </section>
-
-    
-
-    <section id="hero">
-        <h1>welcome to...</h1>
-        <p>join our ...</p>
-        <button>learn more</button>
-
-    </section>
-</main>
-
-<script>
-     document.querySelector('#hero button').addEventListener('clic)',function(){
-        alert('welcome');
-    });
-</script>
-
-<!--FOOTER SECTION-->
-    <footer>
-        <p>&copy; 2024 superlink fibers. All rights reserved.</p>
-    </footer>
 </body>
 </html>
